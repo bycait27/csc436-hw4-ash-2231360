@@ -1,0 +1,10 @@
+{
+  "ticket_id": "T-00999",
+  "zone": "North",
+  "category": "Access",
+  "priority": "High",
+  "opened_on": "2026-03-31",
+  "closed_on": null,
+  "estimated_hours": null,
+  "summary": "Door sensor offline"
+}

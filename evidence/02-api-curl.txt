@@ -1,0 +1,234 @@
+curl -i "http://localhost:3002/api/tickets?zone=South&status=open&sort=hours-desc"
+
+HTTP/1.1 200 OK
+X-Request-Id: 67592bee-897e-4204-b159-2c11ec61435d
+Content-Type: application/json; charset=utf-8
+Content-Length: 428
+ETag: W/"1ac-Of9ivo968095T3lyM3bbjyLjvHo"
+Date: Wed, 07 Oct 2026 23:33:09 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"items":[{"ticket_id":"T-00008","zone":"South","category":"Technology","priority":"Normal","opened_on":"2026-03-30","closed_on":null,"estimated_hours":2,"summary":"Classroom display offline"},{"ticket_id":"T-00007","zone":"South","category":"Access","priority":"High","opened_on":"2026-03-01","closed_on":null,"estimated_hours":null,"summary":"Lift inspection pending"}],"page":1,"pageSize":50,"matchingCount":2,"totalPages":1}
+
+curl -i "http://localhost:3002/api/tickets?zone=none&status=open&sort=hours-desc" 
+
+HTTP/1.1 400 Bad Request
+X-Request-Id: fd5379c2-f220-4e55-999d-8031264269f4
+Content-Type: application/json; charset=utf-8
+Content-Length: 103
+ETag: W/"67-C6OEl43K9selWR1U4WkCbxi3USc"
+Date: Wed, 07 Oct 2026 23:34:11 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":{"code":"invalid_query","message":"zone must be all, North, Central, or South.","details":[]}}
+
+
+====================================================================================================================================
+
+curl -i "http://localhost:3002/api/summary" 
+
+HTTP/1.1 200 OK
+X-Request-Id: f230fe4d-1c8b-47d7-9d14-42862437a6a8
+Content-Type: application/json; charset=utf-8
+Content-Length: 634
+ETag: W/"27a-iOkQUPL3GdpsoDlzPMFWOxtpK8s"
+Date: Wed, 07 Oct 2026 23:42:27 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"asOf":"2026-04-01","filters":{"search":"","zone":"all","status":"all"},"metrics":{"matchingCount":8,"openCount":6,"overdueOpenCount":3,"knownOpenHours":14,"knownOpenCount":4,"unknownOpenCount":2},"byZone":[{"zone":"North","metrics":{"matchingCount":3,"openCount":2,"overdueOpenCount":1,"knownOpenHours":4,"knownOpenCount":1,"unknownOpenCount":1}},{"zone":"Central","metrics":{"matchingCount":3,"openCount":2,"overdueOpenCount":1,"knownOpenHours":8,"knownOpenCount":2,"unknownOpenCount":0}},{"zone":"South","metrics":{"matchingCount":2,"openCount":2,"overdueOpenCount":1,"knownOpenHours":2,"knownOpenCount":1,"unknownOpenCount":1}}]}
+
+curl -i "http://localhost:3002/api/summary?zone=North&status=open"
+
+HTTP/1.1 200 OK
+X-Request-Id: c9b5b746-ad0f-497b-85f7-b504a92224eb
+Content-Type: application/json; charset=utf-8
+Content-Length: 636
+ETag: W/"27c-94DyWJM4dQ5pUN54QBxzQL6YLIw"
+Date: Wed, 07 Oct 2026 23:34:32 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"asOf":"2026-04-01","filters":{"search":"","zone":"North","status":"open"},"metrics":{"matchingCount":2,"openCount":2,"overdueOpenCount":1,"knownOpenHours":4,"knownOpenCount":1,"unknownOpenCount":1},"byZone":[{"zone":"North","metrics":{"matchingCount":2,"openCount":2,"overdueOpenCount":1,"knownOpenHours":4,"knownOpenCount":1,"unknownOpenCount":1}},{"zone":"Central","metrics":{"matchingCount":0,"openCount":0,"overdueOpenCount":0,"knownOpenHours":0,"knownOpenCount":0,"unknownOpenCount":0}},{"zone":"South","metrics":{"matchingCount":0,"openCount":0,"overdueOpenCount":0,"knownOpenHours":0,"knownOpenCount":0,"unknownOpenCount":0}}]}
+
+
+curl -i "http://localhost:3002/api/summary?zone=none&status=open"
+
+HTTP/1.1 400 Bad Request
+X-Request-Id: b0b6ce73-4484-489b-b172-9b0883a35317
+Content-Type: application/json; charset=utf-8
+Content-Length: 103
+ETag: W/"67-C6OEl43K9selWR1U4WkCbxi3USc"
+Date: Wed, 07 Oct 2026 23:34:54 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":{"code":"invalid_query","message":"zone must be all, North, Central, or South.","details":[]}}
+
+====================================================================================================================================
+
+curl -i "http://localhost:3002/api/tickets?zone=West"
+
+HTTP/1.1 400 Bad Request
+X-Request-Id: 5e65b454-ea47-4625-a644-5548aecf58cb
+Content-Type: application/json; charset=utf-8
+Content-Length: 103
+ETag: W/"67-C6OEl43K9selWR1U4WkCbxi3USc"
+Date: Wed, 07 Oct 2026 23:35:12 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":{"code":"invalid_query","message":"zone must be all, North, Central, or South.","details":[]}}
+
+====================================================================================================================================
+
+curl -i "http://localhost:3002/api/tickets/T-00008"
+
+HTTP/1.1 200 OK
+X-Request-Id: 2c12ae0d-b9ae-4df3-9235-7543dbe52d82
+Content-Type: application/json; charset=utf-8
+Content-Length: 182
+ETag: W/"b6-NkDXSqpAzbmSAnlZzYUMTHnhiSY"
+Date: Wed, 07 Oct 2026 23:40:50 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"ticket_id":"T-00008","zone":"South","category":"Technology","priority":"Normal","opened_on":"2026-03-30","closed_on":null,"estimated_hours":2,"summary":"Classroom display offline"}
+
+curl -i "http://localhost:3002/api/tickets/T-00000"
+
+HTTP/1.1 404 Not Found
+X-Request-Id: 25808421-52d1-4326-859a-c8fa73136028
+Content-Type: application/json; charset=utf-8
+Content-Length: 74
+ETag: W/"4a-nVSnqthvNeUgqFXnSPXZljbvP+I"
+Date: Wed, 07 Oct 2026 23:41:33 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":{"code":"not_found","message":"No ticket T-00000.","details":[]}}
+
+====================================================================================================================================
+
+curl.exe -i -X POST http://localhost:3002/api/tickets `
+>>   -H "Content-Type: application/json" `
+>>   -d "@json/post.json"
+
+HTTP/1.1 201 Created
+X-Request-Id: eca34f1c-f5fc-42c8-8ec7-4b30c6b106f2
+Location: /api/tickets/T-00999
+Content-Type: application/json; charset=utf-8
+Content-Length: 173
+ETag: W/"ad-nGXmg0/INn1k//pzeNQMSVmvRfg"
+Date: Wed, 07 Oct 2026 23:35:50 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"ticket_id":"T-00999","zone":"North","category":"Access","priority":"High","opened_on":"2026-03-31","closed_on":null,"estimated_hours":null,"summary":"Door sensor offline"}
+
+curl.exe -i -X POST http://localhost:3002/api/tickets `
+>>   -H "Content-Type: application/json" `
+>>   -d "@json/post-fail.json"
+
+HTTP/1.1 400 Bad Request
+X-Request-Id: 7559ef5e-1e12-46eb-b6f3-2990736f52d4
+Content-Type: application/json; charset=utf-8
+Content-Length: 216
+ETag: W/"d8-T2UR5bZllz2rRZZinphYOw4ZHOU"
+Date: Wed, 07 Oct 2026 23:36:16 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":{"code":"invalid_ticket","message":"Ticket does not satisfy the data contract.","details":[{"field":"opened_on","message":"Opened date must be a valid YYYY-MM-DD date from 2026-01-01 through 2026-04-01."}]}}
+
+====================================================================================================================================
+
+curl.exe -i -X PATCH http://localhost:3002/api/tickets/T-00999 `
+>>   -H "Content-Type: application/json" `
+>>   -d "@json/patch-success.json"
+
+HTTP/1.1 200 OK
+X-Request-Id: 8b97c069-bf5b-465e-9581-04c2661769e3
+Content-Type: application/json; charset=utf-8
+Content-Length: 181
+ETag: W/"b5-YNOPMEsBsp7VbTzmJVpP13tvG68"
+Date: Wed, 07 Oct 2026 23:37:18 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"ticket_id":"T-00999","zone":"North","category":"Access","priority":"High","opened_on":"2026-03-31","closed_on":"2026-04-01","estimated_hours":null,"summary":"Door sensor offline"}
+
+curl.exe -i -X PATCH http://localhost:3002/api/tickets/T-00999 `
+>>   -H "Content-Type: application/json" `
+>>   -d "@json/patch.json"
+
+HTTP/1.1 400 Bad Request
+X-Request-Id: 71f781fa-7e7c-4bde-ac3c-de42a829b461
+Content-Type: application/json; charset=utf-8
+Content-Length: 219
+ETag: W/"db-oYu3GQk1GlW3v0RpvtZwIjdauWM"
+Date: Wed, 07 Oct 2026 23:37:44 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":{"code":"invalid_ticket","message":"Ticket does not satisfy the data contract.","details":[{"field":"closed_on","message":"Closed date must be empty or a valid date from the opened date through 2026-04-01."}]}}
+
+The contract rule that is broken: closed_on is March 30, 2026, before the ticket's opened_on date of March 31, 2026
+
+====================================================================================================================================
+
+curl -i -X DELETE http://localhost:3002/api/tickets/T-00999
+
+HTTP/1.1 204 No Content
+X-Request-Id: 7e7f22a2-3925-4f0c-8bcd-190843cdd189
+Date: Wed, 07 Oct 2026 23:38:22 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+curl.exe -i -X DELETE http://localhost:3002/api/tickets/T-99999
+
+HTTP/1.1 404 Not Found
+X-Request-Id: ba9fcdae-3963-4aea-a7b0-ab8718ade04f
+Content-Type: application/json; charset=utf-8
+Content-Length: 74
+ETag: W/"4a-ykxViWM4SDLE3TmaKHZtGZnKI0s"
+Date: Wed, 07 Oct 2026 23:38:35 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":{"code":"not_found","message":"No ticket T-99999.","details":[]}}
+
+====================================================================================================================================
+
+curl -i "http://localhost:3002/api/healthz"      
+
+HTTP/1.1 200 OK
+X-Request-Id: 9f16b009-466b-4adf-b15e-dccce604c42b
+Content-Type: application/json; charset=utf-8
+Content-Length: 65
+ETag: W/"41-eoMDMrbAbXA+riDbxiWhOG192/g"
+Date: Wed, 07 Oct 2026 23:39:32 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"ok":true,"version":"1.0.0","acceptedCount":8,"rejectedCount":0}
+
+====================================================================================================================================
+
+npm run test
+
+> test
+> vitest run
+
+
+ RUN  v4.1.11 C:[redacted]/backend
+
+ ✓ test/ticketData.test.ts (4 tests) 9ms
+ ✓ test/api.test.ts (8 tests | 1 todo) 88ms
+
+ Test Files  2 passed (2)
+      Tests  11 passed | 1 todo (12)
+   Start at  18:46:35
+   Duration  769ms (transform 126ms, setup 0ms, import 282ms, tests 97ms, environment 0ms)

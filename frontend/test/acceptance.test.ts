@@ -7,11 +7,11 @@ import { validateRecords } from '../src/lib/validateRecords'
 import { calculateWorkload } from '../src/lib/workloadMetrics'
 
 const verificationCsv = readFileSync(
-  new URL('../data/verification.csv', import.meta.url),
+  new URL('../../data/verification.csv', import.meta.url),
   'utf8',
 )
 const edgeCasesCsv = readFileSync(
-  new URL('../data/edge-cases.csv', import.meta.url),
+  new URL('../../data/edge-cases.csv', import.meta.url),
   'utf8',
 )
 

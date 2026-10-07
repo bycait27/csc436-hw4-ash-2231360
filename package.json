@@ -1,22 +1,20 @@
 {
   "name": "evidence-before-action",
   "private": true,
-  "version": "1.0.0",
   "type": "module",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "engines": {
     "node": ">=24 <25"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "npm run dev --workspace frontend",
+    "build": "npm run build --workspace frontend && npm run typecheck --workspace backend",
     "lint": "eslint .",
-    "test": "vitest run",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "papaparse": "^5.7.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "test": "npm run test --workspaces --if-present",
+    "preview": "npm run preview --workspace frontend"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",

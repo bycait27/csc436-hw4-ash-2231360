@@ -49,7 +49,7 @@ Open the local URL printed by Vite. Choose one of the sample datasets in `data/`
 npm test
 ```
 
-**The suite is in [`test/acceptance.test.ts`](test/acceptance.test.ts) and uses these small CSV fixtures:**
+**The suite is in [`frontend/test/acceptance.test.ts`](frontend/test/acceptance.test.ts) and uses these small CSV fixtures:**
 
 ### A1 — `verification.csv`
 

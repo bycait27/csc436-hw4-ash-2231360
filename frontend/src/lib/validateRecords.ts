@@ -1,5 +1,10 @@
 import type { ParsedCsv } from './parseCsv'
 
+export interface ValidationIssue {
+  field: string
+  message: string
+}
+
 export interface RecordValidationResult {
   acceptedRows: string[][]
   rejectedRecords: RejectedRecord[]
@@ -10,6 +15,7 @@ export interface RejectedRecord {
   recordNumber: number
   ticketId: string
   reason: string
+  issues: ValidationIssue[]
 }
 
 const MIN_OPENED_DATE = '2026-01-01'
@@ -51,10 +57,12 @@ export function validateRecords(
     processedRecordNumber += 1
 
     if (row.length !== headers.length) {
+      const message = `Expected ${headers.length} columns, but found ${row.length}.`
       rejectedRecords.push({
         recordNumber: processedRecordNumber,
         ticketId: row[indexOf('ticket_id')]?.trim() ?? '',
-        reason: `Expected ${headers.length} columns, but found ${row.length}.`,
+        reason: message,
+        issues: [{ field: 'record', message }],
       })
       continue
     }
@@ -70,22 +78,23 @@ export function validateRecords(
       isValidDate(openedOn) &&
       openedOn >= MIN_OPENED_DATE &&
       openedOn <= MAX_DATE
-    const reasons: string[] = []
+    const issues: ValidationIssue[] = []
+    const reject = (field: string, message: string) => issues.push({ field, message })
 
     if (!TICKET_ID_PATTERN.test(ticketId)) {
-      reasons.push('Ticket ID must match T- followed by exactly five digits.')
+      reject('ticket_id', 'Ticket ID must match T- followed by exactly five digits.')
     }
     if (!VALID_ZONES.has(value('zone'))) {
-      reasons.push('Zone must be North, South, or Central with exact casing.')
+      reject('zone', 'Zone must be North, South, or Central with exact casing.')
     }
     if (!VALID_CATEGORIES.has(value('category'))) {
-      reasons.push('Category must be Access, Comfort, or Technology.')
+      reject('category', 'Category must be Access, Comfort, or Technology.')
     }
     if (!VALID_PRIORITIES.has(value('priority'))) {
-      reasons.push('Priority must be Low, Normal, or High.')
+      reject('priority', 'Priority must be Low, Normal, or High.')
     }
     if (!openedDateIsValid) {
-      reasons.push('Opened date must be a valid YYYY-MM-DD date from 2026-01-01 through 2026-04-01.')
+      reject('opened_on', 'Opened date must be a valid YYYY-MM-DD date from 2026-01-01 through 2026-04-01.')
     }
     if (
       closedOn !== '' &&
@@ -94,28 +103,29 @@ export function validateRecords(
         closedOn < openedOn ||
         closedOn > MAX_DATE)
     ) {
-      reasons.push('Closed date must be empty or a valid date from the opened date through 2026-04-01.')
+      reject('closed_on', 'Closed date must be empty or a valid date from the opened date through 2026-04-01.')
     }
     if (
       estimate !== '' &&
       (!ESTIMATE_PATTERN.test(estimate) || Number(estimate) > 80)
     ) {
-      reasons.push('Estimated hours must be empty or a decimal from 0 to 80 with at most two decimal places.')
+      reject('estimated_hours', 'Estimated hours must be empty or a decimal from 0 to 80 with at most two decimal places.')
     }
     if (summary.trim() === '') {
-      reasons.push('Summary must not be empty.')
+      reject('summary', 'Summary must not be empty.')
     } else if (summary.trim().length > 240) {
-      reasons.push('Summary must be no more than 240 characters after trimming.')
+      reject('summary', 'Summary must be no more than 240 characters after trimming.')
     }
     if (TICKET_ID_PATTERN.test(ticketId) && acceptedTicketIds.has(ticketId)) {
-      reasons.push('Ticket ID duplicates an already accepted record.')
+      reject('ticket_id', 'Ticket ID duplicates an already accepted record.')
     }
 
-    if (reasons.length > 0) {
+    if (issues.length > 0) {
       rejectedRecords.push({
         recordNumber: processedRecordNumber,
         ticketId: ticketId.trim(),
-        reason: reasons.join(' '),
+        reason: issues.map(({ message }) => message).join(' '),
+        issues,
       })
       continue
     }

@@ -1,0 +1,9 @@
+ticket_id,zone,category,priority,opened_on,closed_on,estimated_hours,summary
+T-00001,North,Access,High,2026-03-01,,4,Entrance door sticks
+T-00002,North,Comfort,Normal,2026-03-20,,,Room temperature swings
+T-00003,North,Technology,Low,2026-03-02,2026-03-04,2,Projector reset
+T-00004,Central,Access,High,2026-03-10,,8,Ramp handrail inspection
+T-00005,Central,Technology,Normal,2026-03-25,,0,"Lab kiosk needs ""restart"", not replacement"
+T-00006,Central,Comfort,Low,2026-03-05,2026-03-06,1,Vent noise resolved
+T-00007,South,Access,High,2026-03-01,,,Lift inspection pending
+T-00008,South,Technology,Normal,2026-03-30,,2,Classroom display offline

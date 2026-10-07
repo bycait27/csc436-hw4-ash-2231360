@@ -1,0 +1,230 @@
+.records-explorer-empty {
+  margin-top: 1.25rem;
+  padding: 0.5rem 0;
+}
+
+.records-explorer-empty h2 {
+  margin: 0;
+  color: #173b6c;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.records-explorer-empty p {
+  margin: 0.4rem 0 0;
+  color: #536174;
+  line-height: 1.55;
+}
+
+.records-explorer {
+  margin-top: 2rem;
+}
+
+.records-explorer__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.records-explorer__heading h2 {
+  margin: 0;
+  color: #253247;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.records-explorer__reset {
+  min-height: 2.5rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid #718198;
+  border-radius: 999px;
+  background: transparent;
+  color: #253247;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.records-explorer__reset:hover {
+  background: #e8edf3;
+}
+
+.records-explorer__filters {
+  display: grid;
+  grid-template-columns: minmax(14rem, 2fr) repeat(3, minmax(9rem, 1fr));
+  align-items: end;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.records-explorer__field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: #34445a;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.records-explorer__field input,
+.records-explorer__field select {
+  width: 100%;
+  min-height: 2.75rem;
+  margin: 0;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #718198;
+  border-radius: 0.7rem;
+  background: #fff;
+  color: #253247;
+  font: inherit;
+  font-weight: 400;
+}
+
+.records-explorer__field input:focus,
+.records-explorer__field select:focus {
+  border-color: #35649b;
+}
+
+.records-explorer__field input:focus-visible,
+.records-explorer__field select:focus-visible {
+  outline: 3px solid #35649b;
+  outline-offset: 2px;
+}
+
+.records-explorer__workload {
+  margin-top: 1.25rem;
+  padding: 1.75rem 2rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 0.125rem 0.75rem rgb(20 40 70 / 8%);
+}
+
+.records-explorer__workload h3 {
+  margin: 0;
+  color: #253247;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.records-explorer__intro {
+  margin: 0.6rem 0 0;
+  color: #536174;
+  font-size: 0.9rem;
+}
+
+.records-explorer__metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.75rem;
+  margin: 2rem 0 0;
+}
+
+.records-explorer__metrics div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.records-explorer__metrics dt {
+  color: #536174;
+  font-size: 0.9rem;
+}
+
+.records-explorer__metrics dd {
+  margin: 0;
+  color: #173b6c;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.records-explorer__coverage {
+  margin: 2rem 0 0;
+  padding: 1.1rem 1.4rem;
+  border-radius: 0.7rem;
+  background: #eaf4ff;
+  color: #294c70;
+  line-height: 1.45;
+}
+
+.records-explorer__zone-caption {
+  margin: 1.75rem 0 0.9rem;
+  color: #34445a;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.records-explorer__zone-table-wrap {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  background: #eaf4ff;
+  overscroll-behavior-x: contain;
+}
+
+.records-explorer__zone-table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  color: #294c70;
+  font-size: 0.9rem;
+}
+
+.records-explorer__zone-table th,
+.records-explorer__zone-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #cbdff3;
+  text-align: left;
+  vertical-align: top;
+}
+
+.records-explorer__zone-table thead th {
+  color: #203f60;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.records-explorer__zone-table tbody th {
+  color: #203f60;
+  font-weight: 700;
+}
+
+.records-explorer__zone-table tbody tr:last-child th,
+.records-explorer__zone-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.records-explorer__zone-note {
+  margin: 1.1rem 0 0;
+  color: #536174;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 54rem) {
+  .records-explorer__filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .records-explorer__metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 34rem) {
+  .records-explorer__filters {
+    grid-template-columns: 1fr;
+  }
+
+  .records-explorer__heading {
+    align-items: flex-start;
+  }
+
+  .records-explorer__workload {
+    padding: 1.25rem;
+  }
+}

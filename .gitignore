@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Vite build output and cache
+dist/
+dist-ssr/
+.vite/
+
+# TypeScript incremental build output
+*.tsbuildinfo
+
+# Local environment files (keep example templates)
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Local-only configuration
+*.local
+
+# Test and coverage output
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json

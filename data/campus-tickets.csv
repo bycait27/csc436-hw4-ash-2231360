@@ -1,0 +1,248 @@
+ticket_id,zone,category,priority,opened_on,closed_on,estimated_hours,summary
+T-00001,North,Comfort,Normal,2026-02-22,2026-02-24,4,"Investigate room conditions - synthetic ticket 1; location label ""A, B""
+Follow-up requested; <em>inspection only</em>"
+T-00002,North,Technology,Normal,2026-02-23,2026-03-09,16,Check a shared classroom device - synthetic ticket 2
+T-00003,North,Comfort,Low,2026-02-17,,8,Investigate room conditions - synthetic ticket 3
+T-00004,North,Comfort,Normal,2026-03-16,2026-03-26,16,Investigate room conditions - synthetic ticket 4
+T-00005,North,Comfort,Low,2026-02-18,,16,Investigate room conditions - synthetic ticket 5
+T-00006,North,Comfort,Low,2026-03-17,2026-03-25,16,Investigate room conditions - synthetic ticket 6
+T-00007,North,Comfort,Low,2026-02-24,,16,Investigate room conditions - synthetic ticket 7
+T-00008,North,Technology,Low,2026-03-28,,1,Check a shared classroom device - synthetic ticket 8
+T-00009,North,Technology,Low,2026-02-25,,8,Check a shared classroom device - synthetic ticket 9
+T-00010,North,Comfort,Low,2026-03-01,,16,Investigate room conditions - synthetic ticket 10
+T-00011,North,Technology,Normal,2026-03-01,,4,Check a shared classroom device - synthetic ticket 11
+T-00012,North,Comfort,Normal,2026-03-09,,,Investigate room conditions - synthetic ticket 12
+T-00013,North,Comfort,Low,2026-03-24,2026-04-01,4,Investigate room conditions - synthetic ticket 13
+T-00014,North,Technology,Low,2026-03-22,,0,Check a shared classroom device - synthetic ticket 14
+T-00015,North,Access,Normal,2026-02-18,,0.5,Inspect an entrance or lift - synthetic ticket 15
+T-00016,North,Technology,High,2026-03-18,,0.5,Check a shared classroom device - synthetic ticket 16
+T-00017,North,Technology,Low,2026-03-03,2026-03-17,4,Check a shared classroom device - synthetic ticket 17
+T-00018,North,Technology,High,2026-02-27,,0.5,"Check a shared classroom device - synthetic ticket 18; location label ""A, B"""
+T-00019,North,Comfort,Normal,2026-03-12,,1,Investigate room conditions - synthetic ticket 19
+T-00020,North,Technology,Normal,2026-03-05,2026-03-16,4,Check a shared classroom device - synthetic ticket 20
+T-00021,North,Technology,Low,2026-03-21,2026-03-25,,Check a shared classroom device - synthetic ticket 21
+T-00022,North,Comfort,Low,2026-02-15,,16,Investigate room conditions - synthetic ticket 22
+T-00023,North,Comfort,Normal,2026-02-15,2026-02-17,0,Investigate room conditions - synthetic ticket 23
+T-00024,North,Comfort,Low,2026-03-23,2026-03-31,8,Investigate room conditions - synthetic ticket 24
+T-00025,North,Access,Low,2026-03-24,,1,Inspect an entrance or lift - synthetic ticket 25
+T-00026,North,Comfort,Low,2026-03-29,,0.5,Investigate room conditions - synthetic ticket 26
+T-00027,North,Technology,Low,2026-02-19,,1,Check a shared classroom device - synthetic ticket 27
+T-00028,North,Comfort,Normal,2026-03-26,,0.5,Investigate room conditions - synthetic ticket 28
+T-00029,North,Technology,Low,2026-02-22,,4,Check a shared classroom device - synthetic ticket 29
+T-00030,North,Comfort,Low,2026-02-16,,16,Investigate room conditions - synthetic ticket 30
+T-00031,North,Comfort,Low,2026-03-12,,8,Investigate room conditions - synthetic ticket 31
+T-00032,North,Technology,Low,2026-03-20,2026-03-31,4,Check a shared classroom device - synthetic ticket 32
+T-00033,North,Technology,Low,2026-03-19,2026-03-31,,Check a shared classroom device - synthetic ticket 33
+T-00034,North,Technology,Low,2026-03-07,,16,Check a shared classroom device - synthetic ticket 34
+T-00035,North,Access,Low,2026-02-17,2026-02-21,0,"Inspect an entrance or lift - synthetic ticket 35; location label ""A, B"""
+T-00036,North,Comfort,Low,2026-03-06,2026-03-07,8,Investigate room conditions - synthetic ticket 36
+T-00037,North,Access,High,2026-03-25,,4,Inspect an entrance or lift - synthetic ticket 37
+T-00038,North,Access,Normal,2026-02-15,2026-03-01,8,"Inspect an entrance or lift - synthetic ticket 38
+Follow-up requested"
+T-00039,North,Access,Normal,2026-03-05,,8,Inspect an entrance or lift - synthetic ticket 39
+T-00040,North,Technology,Low,2026-02-19,,4,Check a shared classroom device - synthetic ticket 40
+T-00041,North,Comfort,Low,2026-03-27,,2,Investigate room conditions - synthetic ticket 41
+T-00042,North,Technology,Low,2026-02-20,,16,Check a shared classroom device - synthetic ticket 42
+T-00043,North,Comfort,Low,2026-03-09,,8,Investigate room conditions - synthetic ticket 43
+T-00044,North,Technology,Low,2026-03-18,,2,Check a shared classroom device - synthetic ticket 44
+T-00045,North,Comfort,High,2026-03-25,,0.5,Investigate room conditions - synthetic ticket 45
+T-00046,North,Access,Low,2026-03-17,2026-03-18,8,Inspect an entrance or lift - synthetic ticket 46
+T-00047,North,Comfort,Low,2026-03-23,2026-04-01,4,Investigate room conditions - synthetic ticket 47
+T-00048,North,Technology,High,2026-03-16,,2,Check a shared classroom device - synthetic ticket 48
+T-00049,North,Comfort,Low,2026-03-25,2026-03-28,4,Investigate room conditions - synthetic ticket 49
+T-00050,North,Comfort,Low,2026-02-28,,,Investigate room conditions - synthetic ticket 50
+T-00051,North,Comfort,Low,2026-03-09,2026-03-11,4,Investigate room conditions - synthetic ticket 51
+T-00052,North,Comfort,Low,2026-03-20,2026-03-30,16,"Investigate room conditions - synthetic ticket 52; location label ""A, B"""
+T-00053,North,Access,Low,2026-03-08,2026-03-22,2,Inspect an entrance or lift - synthetic ticket 53
+T-00054,North,Technology,Low,2026-02-21,,1,Check a shared classroom device - synthetic ticket 54
+T-00055,North,Technology,High,2026-03-26,,0.5,Check a shared classroom device - synthetic ticket 55
+T-00056,North,Access,Low,2026-02-26,2026-03-10,16,Inspect an entrance or lift - synthetic ticket 56
+T-00057,North,Technology,Low,2026-03-09,,4,Check a shared classroom device - synthetic ticket 57
+T-00058,North,Comfort,Low,2026-02-26,,1,Investigate room conditions - synthetic ticket 58
+T-00059,North,Comfort,Low,2026-02-20,,0,Investigate room conditions - synthetic ticket 59
+T-00060,North,Comfort,Normal,2026-03-13,2026-03-15,4,Investigate room conditions - synthetic ticket 60; <em>inspection only</em>
+T-00061,North,Comfort,Normal,2026-02-15,2026-02-16,8,Investigate room conditions - synthetic ticket 61
+T-00062,North,Comfort,Normal,2026-03-12,,8,Investigate room conditions - synthetic ticket 62
+T-00063,North,Technology,Normal,2026-03-07,,8,Check a shared classroom device - synthetic ticket 63
+T-00064,North,Comfort,High,2026-03-03,,2,Investigate room conditions - synthetic ticket 64
+T-00065,North,Comfort,High,2026-03-09,,0,Investigate room conditions - synthetic ticket 65
+T-00066,North,Comfort,Low,2026-03-24,,16,Investigate room conditions - synthetic ticket 66
+T-00067,North,Comfort,Low,2026-03-19,,4,Investigate room conditions - synthetic ticket 67
+T-00068,North,Comfort,Low,2026-02-24,2026-03-08,0,Investigate room conditions - synthetic ticket 68
+T-00069,North,Comfort,Low,2026-03-16,2026-03-28,0.5,"Investigate room conditions - synthetic ticket 69; location label ""A, B"""
+T-00070,North,Comfort,Low,2026-02-19,2026-03-05,16,Investigate room conditions - synthetic ticket 70
+T-00071,North,Access,Low,2026-03-08,2026-03-16,,Inspect an entrance or lift - synthetic ticket 71
+T-00072,North,Comfort,Low,2026-02-25,,2,Investigate room conditions - synthetic ticket 72
+T-00073,North,Comfort,Low,2026-02-26,2026-03-12,0,Investigate room conditions - synthetic ticket 73
+T-00074,North,Access,Low,2026-03-18,,0,Inspect an entrance or lift - synthetic ticket 74
+T-00075,North,Access,Normal,2026-03-02,2026-03-16,0.5,"Inspect an entrance or lift - synthetic ticket 75
+Follow-up requested"
+T-00076,North,Technology,Low,2026-03-30,,1,Check a shared classroom device - synthetic ticket 76
+T-00077,North,Comfort,Low,2026-02-17,2026-02-25,8,Investigate room conditions - synthetic ticket 77
+T-00078,North,Comfort,Low,2026-03-23,2026-03-30,8,Investigate room conditions - synthetic ticket 78
+T-00079,North,Comfort,Normal,2026-02-25,2026-03-03,1,Investigate room conditions - synthetic ticket 79
+T-00080,North,Comfort,Low,2026-03-21,,8,Investigate room conditions - synthetic ticket 80
+T-00081,North,Comfort,Normal,2026-03-01,,,Investigate room conditions - synthetic ticket 81
+T-00082,North,Comfort,Low,2026-02-23,,16,Investigate room conditions - synthetic ticket 82
+T-00083,North,Comfort,High,2026-03-18,,0.5,Investigate room conditions - synthetic ticket 83
+T-00084,North,Comfort,Low,2026-02-28,2026-03-04,0,Investigate room conditions - synthetic ticket 84
+T-00085,North,Comfort,Normal,2026-03-10,,16,Investigate room conditions - synthetic ticket 85
+T-00086,North,Comfort,Low,2026-02-28,2026-03-11,8,"Investigate room conditions - synthetic ticket 86; location label ""A, B"""
+T-00087,North,Comfort,Low,2026-02-25,2026-03-02,0,Investigate room conditions - synthetic ticket 87
+T-00088,North,Access,Low,2026-03-16,,4,Inspect an entrance or lift - synthetic ticket 88
+T-00089,North,Comfort,Low,2026-03-11,,8,Investigate room conditions - synthetic ticket 89
+T-00090,North,Comfort,Low,2026-02-17,,,Investigate room conditions - synthetic ticket 90
+T-00091,North,Comfort,Low,2026-03-14,2026-03-23,16,Investigate room conditions - synthetic ticket 91
+T-00092,North,Comfort,Low,2026-02-16,,0.5,Investigate room conditions - synthetic ticket 92
+T-00093,North,Access,High,2026-03-11,,8,Inspect an entrance or lift - synthetic ticket 93
+T-00094,North,Access,Low,2026-02-15,2026-02-22,0.5,Inspect an entrance or lift - synthetic ticket 94
+T-00095,North,Comfort,Low,2026-03-27,2026-03-30,2,Investigate room conditions - synthetic ticket 95
+T-00096,North,Comfort,Normal,2026-03-27,,16,Investigate room conditions - synthetic ticket 96
+T-00097,North,Comfort,Normal,2026-03-11,2026-03-20,0.5,Investigate room conditions - synthetic ticket 97
+T-00098,North,Access,Low,2026-03-23,,16,Inspect an entrance or lift - synthetic ticket 98
+T-00099,North,Technology,High,2026-03-24,2026-03-31,8,Check a shared classroom device - synthetic ticket 99
+T-00100,North,Comfort,Low,2026-02-24,,8,Investigate room conditions - synthetic ticket 100
+T-00101,North,Technology,Low,2026-03-04,2026-03-16,8,Check a shared classroom device - synthetic ticket 101
+T-00102,North,Comfort,Low,2026-02-16,,4,Investigate room conditions - synthetic ticket 102
+T-00103,North,Comfort,High,2026-02-17,,8,"Investigate room conditions - synthetic ticket 103; location label ""A, B"""
+T-00104,North,Comfort,Normal,2026-02-23,,0,Investigate room conditions - synthetic ticket 104
+T-00105,North,Technology,Low,2026-03-04,,0,Check a shared classroom device - synthetic ticket 105
+T-00106,North,Comfort,Normal,2026-03-18,2026-04-01,1,Investigate room conditions - synthetic ticket 106
+T-00107,North,Comfort,Low,2026-02-18,,0.5,Investigate room conditions - synthetic ticket 107
+T-00108,North,Access,Low,2026-03-12,2026-03-26,1,Inspect an entrance or lift - synthetic ticket 108
+T-00109,North,Technology,High,2026-02-17,,8,Check a shared classroom device - synthetic ticket 109
+T-00110,North,Access,Normal,2026-03-15,2026-03-25,0,Inspect an entrance or lift - synthetic ticket 110
+T-00111,North,Technology,Low,2026-03-01,2026-03-02,2,Check a shared classroom device - synthetic ticket 111
+T-00112,North,Access,Normal,2026-03-14,,8,"Inspect an entrance or lift - synthetic ticket 112
+Follow-up requested"
+T-00113,North,Comfort,High,2026-02-23,2026-02-25,16,Investigate room conditions - synthetic ticket 113
+T-00114,North,Technology,Low,2026-03-05,2026-03-17,8,Check a shared classroom device - synthetic ticket 114
+T-00115,North,Access,Low,2026-03-07,2026-03-15,1,Inspect an entrance or lift - synthetic ticket 115
+T-00116,North,Access,Low,2026-03-22,,2,Inspect an entrance or lift - synthetic ticket 116
+T-00117,North,Comfort,Low,2026-03-31,,,Investigate room conditions - synthetic ticket 117
+T-00118,North,Comfort,Low,2026-03-09,,2,Investigate room conditions - synthetic ticket 118
+T-00119,North,Technology,Low,2026-02-15,2026-02-16,,Check a shared classroom device - synthetic ticket 119; <em>inspection only</em>
+T-00120,North,Technology,High,2026-02-24,2026-03-02,,"Check a shared classroom device - synthetic ticket 120; location label ""A, B"""
+T-00121,Central,Technology,High,2026-03-22,2026-03-24,8,Check a shared classroom device - synthetic ticket 121
+T-00122,Central,Access,Low,2026-03-07,,1,Inspect an entrance or lift - synthetic ticket 122
+T-00123,Central,Comfort,Low,2026-02-28,2026-03-03,8,Investigate room conditions - synthetic ticket 123
+T-00124,Central,Technology,Low,2026-03-17,2026-03-22,0,Check a shared classroom device - synthetic ticket 124
+T-00125,Central,Technology,Normal,2026-03-16,2026-03-17,16,Check a shared classroom device - synthetic ticket 125
+T-00126,Central,Access,Normal,2026-03-26,2026-03-30,2,Inspect an entrance or lift - synthetic ticket 126
+T-00127,Central,Comfort,Low,2026-03-10,2026-03-22,0,Investigate room conditions - synthetic ticket 127
+T-00128,Central,Technology,Low,2026-03-09,2026-03-11,16,Check a shared classroom device - synthetic ticket 128
+T-00129,Central,Technology,Low,2026-03-30,2026-04-01,0,Check a shared classroom device - synthetic ticket 129
+T-00130,Central,Technology,Low,2026-03-25,,,Check a shared classroom device - synthetic ticket 130
+T-00131,Central,Access,Low,2026-03-25,,1,Inspect an entrance or lift - synthetic ticket 131
+T-00132,Central,Technology,High,2026-03-24,,8,Check a shared classroom device - synthetic ticket 132
+T-00133,Central,Technology,High,2026-03-30,2026-04-01,2,Check a shared classroom device - synthetic ticket 133
+T-00134,Central,Access,Low,2026-03-19,,4,Inspect an entrance or lift - synthetic ticket 134
+T-00135,Central,Comfort,Normal,2026-03-10,2026-03-20,2,Investigate room conditions - synthetic ticket 135
+T-00136,Central,Access,Low,2026-03-04,2026-03-14,8,Inspect an entrance or lift - synthetic ticket 136
+T-00137,Central,Access,High,2026-03-12,,,"Inspect an entrance or lift - synthetic ticket 137; location label ""A, B"""
+T-00138,Central,Access,Low,2026-03-17,2026-03-23,4,Inspect an entrance or lift - synthetic ticket 138
+T-00139,Central,Technology,High,2026-03-05,,2,Check a shared classroom device - synthetic ticket 139
+T-00140,Central,Technology,High,2026-03-06,2026-03-16,,Check a shared classroom device - synthetic ticket 140
+T-00141,Central,Technology,Low,2026-03-03,2026-03-11,0.5,Check a shared classroom device - synthetic ticket 141
+T-00142,Central,Access,Low,2026-03-13,2026-03-15,8,Inspect an entrance or lift - synthetic ticket 142
+T-00143,Central,Technology,Normal,2026-03-08,2026-03-14,,Check a shared classroom device - synthetic ticket 143
+T-00144,Central,Technology,Low,2026-02-25,2026-03-07,4,Check a shared classroom device - synthetic ticket 144
+T-00145,Central,Technology,Low,2026-03-04,,2,Check a shared classroom device - synthetic ticket 145
+T-00146,Central,Comfort,Low,2026-03-08,,16,Investigate room conditions - synthetic ticket 146
+T-00147,Central,Technology,Low,2026-03-16,2026-03-21,4,Check a shared classroom device - synthetic ticket 147
+T-00148,Central,Technology,High,2026-03-09,2026-03-16,0,Check a shared classroom device - synthetic ticket 148
+T-00149,Central,Comfort,Normal,2026-03-15,2026-03-20,,"Investigate room conditions - synthetic ticket 149
+Follow-up requested"
+T-00150,Central,Technology,Normal,2026-03-20,,16,Check a shared classroom device - synthetic ticket 150
+T-00151,Central,Technology,Low,2026-03-12,2026-03-25,4,Check a shared classroom device - synthetic ticket 151
+T-00152,Central,Comfort,Normal,2026-03-12,2026-03-26,,Investigate room conditions - synthetic ticket 152
+T-00153,Central,Comfort,Low,2026-03-08,,,Investigate room conditions - synthetic ticket 153
+T-00154,Central,Technology,Low,2026-02-27,2026-03-11,,"Check a shared classroom device - synthetic ticket 154; location label ""A, B"""
+T-00155,Central,Technology,Normal,2026-03-25,2026-03-28,,Check a shared classroom device - synthetic ticket 155
+T-00156,Central,Access,Low,2026-03-29,2026-03-31,0.5,Inspect an entrance or lift - synthetic ticket 156
+T-00157,Central,Technology,Low,2026-03-05,,8,Check a shared classroom device - synthetic ticket 157
+T-00158,Central,Technology,Normal,2026-03-03,2026-03-15,0.5,Check a shared classroom device - synthetic ticket 158
+T-00159,Central,Comfort,Normal,2026-03-03,2026-03-16,4,Investigate room conditions - synthetic ticket 159
+T-00160,Central,Technology,Low,2026-03-14,,,Check a shared classroom device - synthetic ticket 160
+T-00161,Central,Comfort,Normal,2026-03-11,,,Investigate room conditions - synthetic ticket 161
+T-00162,Central,Access,Low,2026-02-25,2026-03-03,8,Inspect an entrance or lift - synthetic ticket 162
+T-00163,Central,Technology,Normal,2026-03-31,2026-04-01,0.5,Check a shared classroom device - synthetic ticket 163
+T-00164,Central,Comfort,High,2026-03-17,,0,Investigate room conditions - synthetic ticket 164
+T-00165,Central,Access,Low,2026-03-09,,4,Inspect an entrance or lift - synthetic ticket 165
+T-00166,Central,Access,Low,2026-03-16,2026-03-18,,Inspect an entrance or lift - synthetic ticket 166
+T-00167,Central,Access,Normal,2026-03-01,2026-03-03,,Inspect an entrance or lift - synthetic ticket 167
+T-00168,Central,Technology,High,2026-03-12,2026-03-23,0,Check a shared classroom device - synthetic ticket 168
+T-00169,Central,Technology,High,2026-03-17,2026-03-23,4,Check a shared classroom device - synthetic ticket 169
+T-00170,Central,Comfort,Low,2026-03-24,2026-03-29,4,Investigate room conditions - synthetic ticket 170
+T-00171,Central,Technology,High,2026-03-16,,4,"Check a shared classroom device - synthetic ticket 171; location label ""A, B"""
+T-00172,Central,Technology,Low,2026-03-27,,2,Check a shared classroom device - synthetic ticket 172
+T-00173,Central,Access,Low,2026-02-27,2026-03-11,0,Inspect an entrance or lift - synthetic ticket 173
+T-00174,Central,Access,Low,2026-03-30,2026-03-31,,Inspect an entrance or lift - synthetic ticket 174
+T-00175,Central,Access,High,2026-03-17,2026-03-19,2,Inspect an entrance or lift - synthetic ticket 175
+T-00176,Central,Comfort,Normal,2026-03-26,2026-03-28,,Investigate room conditions - synthetic ticket 176
+T-00177,Central,Comfort,High,2026-03-04,2026-03-11,0.5,Investigate room conditions - synthetic ticket 177
+T-00178,Central,Access,Low,2026-03-15,,4,Inspect an entrance or lift - synthetic ticket 178; <em>inspection only</em>
+T-00179,Central,Technology,Normal,2026-03-17,2026-03-25,0.5,Check a shared classroom device - synthetic ticket 179
+T-00180,Central,Technology,Low,2026-03-23,,8,Check a shared classroom device - synthetic ticket 180
+T-00181,Central,Access,Low,2026-03-29,,4,Inspect an entrance or lift - synthetic ticket 181
+T-00182,Central,Access,High,2026-03-23,,16,Inspect an entrance or lift - synthetic ticket 182
+T-00183,Central,Access,Normal,2026-03-15,2026-03-21,16,Inspect an entrance or lift - synthetic ticket 183
+T-00184,Central,Access,Normal,2026-03-03,,1,Inspect an entrance or lift - synthetic ticket 184
+T-00185,Central,Comfort,Low,2026-03-02,2026-03-04,2,Investigate room conditions - synthetic ticket 185
+T-00186,Central,Comfort,Low,2026-03-31,,,"Investigate room conditions - synthetic ticket 186
+Follow-up requested"
+T-00187,Central,Comfort,Normal,2026-03-24,2026-03-25,1,Investigate room conditions - synthetic ticket 187
+T-00188,Central,Comfort,Low,2026-03-23,2026-03-31,1,"Investigate room conditions - synthetic ticket 188; location label ""A, B"""
+T-00189,Central,Access,Low,2026-03-29,2026-03-31,16,Inspect an entrance or lift - synthetic ticket 189
+T-00190,Central,Technology,High,2026-03-25,2026-03-30,1,Check a shared classroom device - synthetic ticket 190
+T-00191,Central,Technology,Low,2026-03-21,,0.5,Check a shared classroom device - synthetic ticket 191
+T-00192,Central,Technology,Normal,2026-02-25,,,Check a shared classroom device - synthetic ticket 192
+T-00193,Central,Technology,Low,2026-03-22,,,Check a shared classroom device - synthetic ticket 193
+T-00194,Central,Technology,Low,2026-03-27,,2,Check a shared classroom device - synthetic ticket 194
+T-00195,Central,Comfort,Low,2026-03-23,2026-03-30,0,Investigate room conditions - synthetic ticket 195
+T-00196,Central,Access,High,2026-03-20,2026-03-28,1,Inspect an entrance or lift - synthetic ticket 196
+T-00197,Central,Technology,Low,2026-03-12,,2,Check a shared classroom device - synthetic ticket 197
+T-00198,Central,Technology,High,2026-02-25,,2,Check a shared classroom device - synthetic ticket 198
+T-00199,Central,Comfort,Normal,2026-03-19,2026-03-23,0.5,Investigate room conditions - synthetic ticket 199
+T-00200,Central,Access,High,2026-03-16,,16,Inspect an entrance or lift - synthetic ticket 200
+T-00201,South,Technology,Normal,2026-03-09,,,Check a shared classroom device - synthetic ticket 201
+T-00202,South,Access,High,2026-03-13,,16,Inspect an entrance or lift - synthetic ticket 202
+T-00203,South,Access,High,2026-02-02,,,Inspect an entrance or lift - synthetic ticket 203
+T-00204,South,Technology,Low,2026-03-13,,0.5,Check a shared classroom device - synthetic ticket 204
+T-00205,South,Access,Normal,2026-03-23,,,"Inspect an entrance or lift - synthetic ticket 205; location label ""A, B"""
+T-00206,South,Comfort,Normal,2026-03-28,,,Investigate room conditions - synthetic ticket 206
+T-00207,South,Comfort,High,2026-03-21,,,Investigate room conditions - synthetic ticket 207
+T-00208,South,Access,High,2026-03-25,2026-03-27,,Inspect an entrance or lift - synthetic ticket 208
+T-00209,South,Comfort,High,2026-02-17,2026-03-02,,Investigate room conditions - synthetic ticket 209
+T-00210,South,Technology,High,2026-03-12,,2,Check a shared classroom device - synthetic ticket 210
+T-00211,South,Technology,High,2026-02-12,,,Check a shared classroom device - synthetic ticket 211
+T-00212,South,Access,High,2026-03-21,,,Inspect an entrance or lift - synthetic ticket 212
+T-00213,South,Comfort,High,2026-03-13,,,Investigate room conditions - synthetic ticket 213
+T-00214,South,Access,Normal,2026-02-27,,8,Inspect an entrance or lift - synthetic ticket 214
+T-00215,South,Comfort,Normal,2026-03-05,,1,Investigate room conditions - synthetic ticket 215
+T-00216,South,Access,Normal,2026-03-04,,,Inspect an entrance or lift - synthetic ticket 216
+T-00217,South,Technology,High,2026-03-30,,,Check a shared classroom device - synthetic ticket 217
+T-00218,South,Access,High,2026-01-31,,,Inspect an entrance or lift - synthetic ticket 218
+T-00219,South,Technology,High,2026-02-13,,,Check a shared classroom device - synthetic ticket 219
+T-00220,South,Access,High,2026-02-07,,0.5,Inspect an entrance or lift - synthetic ticket 220
+T-00221,South,Access,High,2026-03-29,,,Inspect an entrance or lift - synthetic ticket 221
+T-00222,South,Technology,Normal,2026-03-19,2026-04-01,8,"Check a shared classroom device - synthetic ticket 222; location label ""A, B"""
+T-00223,South,Access,Normal,2026-02-02,,1,"Inspect an entrance or lift - synthetic ticket 223
+Follow-up requested"
+T-00224,South,Access,High,2026-03-18,,8,Inspect an entrance or lift - synthetic ticket 224
+T-00225,South,Access,Low,2026-02-06,2026-02-16,4,Inspect an entrance or lift - synthetic ticket 225
+T-00226,South,Technology,High,2026-02-21,,,Check a shared classroom device - synthetic ticket 226
+T-00227,South,Access,Low,2026-03-29,,0,Inspect an entrance or lift - synthetic ticket 227
+T-00228,South,Technology,Normal,2026-02-16,,,Check a shared classroom device - synthetic ticket 228
+T-00229,South,Access,High,2026-03-06,,1,Inspect an entrance or lift - synthetic ticket 229
+T-00230,South,Comfort,High,2026-03-21,2026-03-24,,Investigate room conditions - synthetic ticket 230
+T-00231,South,Access,High,2026-03-30,,8,Inspect an entrance or lift - synthetic ticket 231
+T-00232,South,Access,High,2026-03-01,,2,Inspect an entrance or lift - synthetic ticket 232
+T-00233,South,Access,High,2026-03-27,,,Inspect an entrance or lift - synthetic ticket 233
+T-00234,South,Access,Low,2026-02-15,,,Inspect an entrance or lift - synthetic ticket 234
+T-00235,South,Access,High,2026-02-02,2026-02-06,2,Inspect an entrance or lift - synthetic ticket 235
+T-00236,South,Technology,High,2026-02-09,,16,Check a shared classroom device - synthetic ticket 236
+T-00237,South,Technology,High,2026-02-02,,,Check a shared classroom device - synthetic ticket 237; <em>inspection only</em>
+T-00238,South,Access,High,2026-01-31,,8,Inspect an entrance or lift - synthetic ticket 238
+T-00239,South,Comfort,High,2026-03-24,,,"Investigate room conditions - synthetic ticket 239; location label ""A, B"""
+T-00240,South,Access,High,2026-02-26,2026-03-04,4,Inspect an entrance or lift - synthetic ticket 240

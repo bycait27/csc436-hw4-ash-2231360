@@ -1,0 +1,133 @@
+.matching-tickets {
+  margin-top: 1.25rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 0.125rem 0.75rem rgb(20 40 70 / 8%);
+}
+
+.matching-tickets__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.matching-tickets__heading h2 {
+  margin: 0;
+  color: #253247;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.matching-tickets__heading p {
+  margin: 0;
+  color: #536174;
+  font-size: 0.9rem;
+}
+
+.matching-tickets__description,
+.matching-tickets__empty {
+  margin: 0.6rem 0 1rem;
+  color: #536174;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.matching-tickets__table-wrap {
+  min-width: 0;
+  max-width: 100%;
+  overflow: auto;
+  border-radius: 0.75rem;
+  background: #eaf4ff;
+  overscroll-behavior: contain;
+}
+
+.matching-tickets__table-wrap table {
+  width: 100%;
+  min-width: 65rem;
+  margin: 0;
+  border-collapse: collapse;
+  color: #294c70;
+  font-size: 0.9rem;
+}
+
+.matching-tickets__table-wrap th,
+.matching-tickets__table-wrap td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #cbdff3;
+  text-align: left;
+  vertical-align: top;
+}
+
+.matching-tickets__table-wrap thead th {
+  color: #203f60;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.matching-tickets__table-wrap tbody th {
+  color: #203f60;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.matching-tickets__table-wrap tbody tr:last-child th,
+.matching-tickets__table-wrap tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.matching-tickets__table-wrap tbody tr:hover {
+  background: #dceeff;
+}
+
+.matching-tickets__pagination {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  color: #536174;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.matching-tickets__page-button {
+  justify-self: start;
+  min-height: 2.4rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #718198;
+  border-radius: 999px;
+  background: transparent;
+  color: #253247;
+  cursor: pointer;
+  font: inherit;
+}
+
+.matching-tickets__page-button:last-child {
+  justify-self: end;
+}
+
+.matching-tickets__page-button:hover:not(:disabled) {
+  background: #e8edf3;
+}
+
+.matching-tickets__page-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+@media (max-width: 42rem) {
+  .matching-tickets {
+    padding: 1rem;
+  }
+
+  .matching-tickets__heading {
+    align-items: baseline;
+  }
+
+  .matching-tickets__pagination {
+    grid-template-columns: auto 1fr auto;
+    gap: 0.5rem;
+  }
+}

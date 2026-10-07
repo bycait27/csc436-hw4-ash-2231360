@@ -1,0 +1,26 @@
+ticket_id,zone,category,priority,opened_on,closed_on,estimated_hours,summary
+T-00990,North,Access,High,2026-02-30,,1,Impossible date does not reserve this ID
+T-00990,North,Access,High,2026-03-01,,4,Valid row after invalid ID
+T-00991,South,Technology,Normal,2026-03-31,,0,"Monitor, ""A"" needs inspection
+Second line"
+T-00991,South,Technology,Normal,2026-03-31,,8,Later valid duplicate loses
+T-00992,north,Access,High,2026-03-01,,1,Wrong case is not normalized
+T-00993,North,Access,Urgent,2026-03-01,,1,Unknown priority
+T-00994,North,Access,High,2026-03-10,2026-03-09,1,Closed before opening
+T-00995,North,Access,High,2026-04-02,,1,Future opening
+T-00996,North,Access,High,2026-03-01,,-1,Negative estimate
+T-00997,North,Access,High,2026-03-01,,NaN,Not a finite estimate
+T-00998,North,Access,High,2026-03-01,,Infinity,Infinite estimate
+T-00999,North,Access,High,2026-03-01,,2hours,Suffix is not a decimal
+T-01000,Central,Technology,Low,2026-03-18,,,<b>Inspect me</b>
+T-01001,Central,Comfort,Normal,2026-03-19,2026-03-20,,=1+1
+T-01002,North,Access,High,2026-03-01,,1,
+T-01003,North,Network,High,2026-03-01,,1,Unknown category
+T-01004,North,Access,High,2026-03-01,,1e2,Exponent notation
+T-01005,North,Access,High,2026-03-01,,81,Above maximum estimate
+T-01006,North,Access,High,2026-03-01,,1.234,Too many fractional digits
+T-01007,North,Access,High,2026-03-01,,0
+X-01008,North,Access,High,2026-03-01,,1,Wrong ID format
+ T-01009 , North , Comfort , Low , 2026-03-31 ,, 2.50 , Trim outside; preserve  inside 
+
+ , , , , , , , 

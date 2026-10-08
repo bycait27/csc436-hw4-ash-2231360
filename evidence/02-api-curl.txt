@@ -214,21 +214,3 @@ Connection: keep-alive
 Keep-Alive: timeout=5
 
 {"ok":true,"version":"1.0.0","acceptedCount":8,"rejectedCount":0}
-
-====================================================================================================================================
-
-npm run test
-
-> test
-> vitest run
-
-
- RUN  v4.1.11 C:[redacted]/backend
-
- ✓ test/ticketData.test.ts (4 tests) 9ms
- ✓ test/api.test.ts (8 tests | 1 todo) 88ms
-
- Test Files  2 passed (2)
-      Tests  11 passed | 1 todo (12)
-   Start at  18:46:35
-   Duration  769ms (transform 126ms, setup 0ms, import 282ms, tests 97ms, environment 0ms)

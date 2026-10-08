@@ -1,0 +1,50 @@
+curl.exe -sSI https://evidence-before-action-frontend.onrender.com/
+
+HTTP/1.1 200 OK
+Date: Thu, 08 Oct 2026 15:32:30 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Cache-Control: public, max-age=0, s-maxage=300
+
+============================================================================================================
+
+curl.exe -sS https://evidence-before-action-api.onrender.com/api/healthz
+
+{"ok":true,"version":"1.0.0","acceptedCount":240,"rejectedCount":0}
+
+============================================================================================================
+
+curl.exe -sS "https://evidence-before-action-api.onrender.com/api/summary?zone=North"
+
+{"asOf":"2026-04-01","filters":{"search":"","zone":"North","status":"all"},"metrics":{"matchingCount":120,"openCount":69,"overdueOpenCount":52,"knownOpenHours":362,"knownOpenCount":64,"unknownOpenCount":5},"byZone":[{"zone":"North","metrics":{"matchingCount":120,"openCount":69,"overdueOpenCount":52,"knownOpenHours":362,"knownOpenCount":64,"unknownOpenCount":5}},{"zone":"Central","metrics":{"matchingCount":0,"openCount":0,"overdueOpenCount":0,"knownOpenHours":0,"knownOpenCount":0,"unknownOpenCount":0}},{"zone":"South","metrics":{"matchingCount":0,"openCount":0,"overdueOpenCount":0,"knownOpenHours":0,"knownOpenCount":0,"unknownOpenCount":0}}]}
+
+============================================================================================================
+
+curl.exe -sS -o NUL -w "%{http_code}`n" -X POST `
+>>   https://evidence-before-action-api.onrender.com/api/tickets `
+>>   -H "Content-Type: application/json" -d "{}"
+
+403
+
+============================================================================================================
+
+curl.exe -sS -o NUL -D - -X OPTIONS `
+>>   https://evidence-before-action-api.onrender.com/api/tickets `
+>>   -H "Origin: https://evidence-before-action-frontend.onrender.com" `
+>>   -H "Access-Control-Request-Method: POST"
+
+HTTP/1.1 204 No Content
+Date: Thu, 08 Oct 2026 15:34:53 GMT
+Connection: keep-alive
+access-control-allow-headers: Content-Type, X-Request-Id
+access-control-allow-methods: GET, POST, PATCH, DELETE
+access-control-allow-origin: https://evidence-before-action-frontend.onrender.com
+access-control-expose-headers: Location, X-Request-Id
+access-control-max-age: 600
+rndr-id: 0f74d3ad-f958-441c
+Server: cloudflare
+vary: Origin
+x-render-origin-server: Render
+cf-cache-status: DYNAMIC
+CF-RAY: a4763658f922aff5-ORD
+alt-svc: h3=":443"; ma=86400

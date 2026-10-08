@@ -1,6 +1,7 @@
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { createApp } from './app'
+import { parseCorsOrigins } from './cors-options'
 import { loadTicketData } from './ticketData'
 
 async function startServer() {
@@ -19,11 +20,13 @@ async function startServer() {
 
   const allowWrites = process.env.ALLOW_WRITES?.toLowerCase() !== 'false'
   const port = Number(process.env.PORT ?? 3001)
+  const corsOrigins = parseCorsOrigins(process.env.CORS_ORIGINS)
   const app = createApp({
     tickets: loaded.tickets,
     acceptedCount: loaded.tickets.length,
     rejectedCount: loaded.rejectedRecords.length,
     allowWrites,
+    corsOrigins,
   })
   app.listen(port, () => {
     console.info(`Ticket API listening at http://localhost:${port}/api`)

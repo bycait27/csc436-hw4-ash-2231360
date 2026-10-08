@@ -4,6 +4,7 @@ import type { AddressInfo } from 'node:net'
 import { fileURLToPath } from 'node:url'
 import { beforeAll, describe, expect, it } from 'vitest'
 import { createApp } from '../src/app'
+import { parseCorsOrigins } from '../src/cors-options'
 import { loadTicketData, type Ticket } from '../src/ticketData'
 
 const verificationPath = fileURLToPath(new URL('../../data/verification.csv', import.meta.url))
@@ -25,8 +26,11 @@ async function json<T>(response: Response): Promise<T> {
   return response.json() as Promise<T>
 }
 
-async function withApi(run: (baseUrl: string) => Promise<void>, allowWrites = true) {
-  const server = createServer(createApp({ tickets: fixtureTickets, allowWrites }))
+async function withApi(
+  run: (baseUrl: string) => Promise<void>,
+  options: { allowWrites?: boolean; corsOrigins?: ReadonlySet<string> } = {},
+) {
+  const server = createServer(createApp({ tickets: fixtureTickets, ...options }))
   server.listen(0, '127.0.0.1')
   await once(server, 'listening')
   const address = server.address() as AddressInfo
@@ -98,7 +102,59 @@ describe('Task 1 named backend API tests', () => {
     })
   })
 
-  it.todo('3. CORS preflight from allowed and disallowed origins is covered in Task 2')
+  it('3. applies the configured exact CORS policy to preflights, data, and errors', async () => {
+    const allowedOrigin = 'http://localhost:5173'
+    const origins = parseCorsOrigins(`${allowedOrigin},https://example.github.io`)
+    await withApi(async (baseUrl) => {
+      const allowed = await fetch(`${baseUrl}/api/tickets/T-00001`, {
+        method: 'OPTIONS',
+        headers: {
+          Origin: allowedOrigin,
+          'Access-Control-Request-Method': 'PATCH',
+          'Access-Control-Request-Headers': 'content-type,x-request-id',
+        },
+      })
+      expect(allowed.status).toBe(204)
+      expect(allowed.headers.get('access-control-allow-origin')).toBe(allowedOrigin)
+      expect(allowed.headers.get('access-control-allow-methods')).toContain('PATCH')
+      expect(allowed.headers.get('access-control-allow-headers')).toBe('Content-Type, X-Request-Id')
+      expect(allowed.headers.get('access-control-max-age')).toBe('600')
+      expect(allowed.headers.get('access-control-expose-headers')).toBe('Location, X-Request-Id')
+      expect(allowed.headers.get('vary')).toContain('Origin')
+
+      const deniedPreflight = await fetch(`${baseUrl}/api/tickets/T-00001`, {
+        method: 'OPTIONS',
+        headers: {
+          Origin: 'http://localhost:51730',
+          'Access-Control-Request-Method': 'PATCH',
+          'Access-Control-Request-Headers': 'content-type,x-request-id',
+        },
+      })
+      expect(deniedPreflight.status).toBe(204)
+      expect(deniedPreflight.headers.get('access-control-allow-origin')).toBeNull()
+      expect(deniedPreflight.headers.get('vary')).toContain('Origin')
+
+      const deniedGet = await fetch(`${baseUrl}/api/tickets/T-00001`, {
+        headers: { Origin: 'http://localhost:51730' },
+      })
+      expect(deniedGet.status).toBe(200)
+      expect(deniedGet.headers.get('access-control-allow-origin')).toBeNull()
+      expect((await json<Ticket>(deniedGet)).ticket_id).toBe('T-00001')
+
+      const allowedGet = await fetch(`${baseUrl}/api/tickets/T-00001`, {
+        headers: { Origin: allowedOrigin },
+      })
+      expect(allowedGet.headers.get('access-control-expose-headers')).toBe('Location, X-Request-Id')
+      expect(allowedGet.headers.get('x-request-id')).toBeTruthy()
+
+      const allowedError = await fetch(`${baseUrl}/api/tickets?zone=West`, {
+        headers: { Origin: allowedOrigin },
+      })
+      expect(allowedError.status).toBe(400)
+      expect(allowedError.headers.get('access-control-allow-origin')).toBe(allowedOrigin)
+      expect(allowedError.headers.get('x-request-id')).toBeTruthy()
+    }, { corsOrigins: origins })
+  })
 })
 
 describe('ticket API behavior', () => {
@@ -171,6 +227,17 @@ describe('ticket API behavior', () => {
         expect(response.status).toBe(403)
         expect((await json<ErrorBody>(response)).error.code).toBe('read_only')
       }
-    }, false)
+    }, { allowWrites: false })
+  })
+})
+
+describe('CORS origin configuration', () => {
+  it('requires exact HTTP(S) origins and rejects wildcard, paths, and invalid values', () => {
+    expect(parseCorsOrigins('http://localhost:5173, https://example.github.io')).toEqual(
+      new Set(['http://localhost:5173', 'https://example.github.io']),
+    )
+    for (const invalid of [undefined, '*', 'http://localhost:5173/', 'ftp://example.com', 'not-an-origin']) {
+      expect(() => parseCorsOrigins(invalid)).toThrow()
+    }
   })
 })

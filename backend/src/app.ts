@@ -6,12 +6,14 @@ import { randomUUID } from 'node:crypto'
 import { createStore, type TicketStore } from './store'
 import { HttpError, summaryHandler, ticketsRouter } from './tickets.ts'
 import type { Ticket } from './ticketData'
+import { corsMiddleware } from './cors-options.ts'
 
 export interface AppOptions {
   tickets: Ticket[]
   acceptedCount?: number
   rejectedCount?: number
   allowWrites?: boolean
+  corsOrigins?: ReadonlySet<string>
   store?: TicketStore
   log?: (message: string) => void
 }
@@ -21,11 +23,13 @@ export function createApp({
   acceptedCount = tickets.length,
   rejectedCount = 0,
   allowWrites = true,
+  corsOrigins = new Set<string>(),
   store = createStore(tickets),
   log = console.error,
 }: AppOptions) {
   const app = express()
   app.disable('x-powered-by')
+  app.use(corsMiddleware(corsOrigins))
 
   const requestIds: RequestHandler = (req, res, next) => {
     const incomingId = req.get('X-Request-Id')

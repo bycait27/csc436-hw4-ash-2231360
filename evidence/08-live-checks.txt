@@ -48,3 +48,7 @@ x-render-origin-server: Render
 cf-cache-status: DYNAMIC
 CF-RAY: a4763658f922aff5-ORD
 alt-svc: h3=":443"; ma=86400
+
+============================================================================================================
+
+Protocol column screenshot is inside evidence folder (protocol-column.png).

@@ -1,0 +1,505 @@
+.\tls-inspect.ps1 evidence-before-action-api.onrender.com
+
+== Connection ==
+
+Host     : evidence-before-action-api.onrender.com:443
+Protocol : Tls13
+Cipher   : TLS_AES_256_GCM_SHA384
+
+== Leaf certificate ==
+
+Subject    : CN=onrender.com
+Issuer     : CN=WE1, O=Google Trust Services, C=US
+NotBefore  : 2026-09-21 17:04
+NotAfter   : 2026-12-20 17:04
+DaysLeft   : 73
+SAN        : DNS Name=onrender.com, DNS Name=*.onrender.com
+Thumbprint : 5B1C6B87238FA11C7AFBCCC035D845D38288B85A
+
+== Chain built by this device (0 = leaf) ==
+
+Depth Subject                                                     NotAfter
+----- -------                                                     --------
+    0 CN=onrender.com                                             2026-12-20
+    1 CN=WE1, O=Google Trust Services, C=US                       2029-02-20
+    2 CN=GTS Root R4, O=Google Trust Services LLC, C=US           2028-01-27
+    3 CN=GlobalSign Root CA, OU=Root CA, O=GlobalSign nv-sa, C=BE 2028-01-28
+
+== Verdict ==
+
+PolicyErrors : None
+ChainStatus  : OK
+
+====================================================================================
+
+.\tls-inspect.ps1 evidence-before-action-api.onrender.com -SaveCertificate api.cer
+>> certutil -dump api.cer
+
+== Connection ==
+
+Host     : evidence-before-action-api.onrender.com:443
+Protocol : Tls13
+Cipher   : TLS_AES_256_GCM_SHA384
+
+== Leaf certificate ==
+
+Subject    : CN=onrender.com
+Issuer     : CN=WE1, O=Google Trust Services, C=US
+NotBefore  : 2026-09-21 17:04
+NotAfter   : 2026-12-20 17:04
+DaysLeft   : 73
+SAN        : DNS Name=onrender.com, DNS Name=*.onrender.com
+Thumbprint : 5B1C6B87238FA11C7AFBCCC035D845D38288B85A
+
+== Chain built by this device (0 = leaf) ==
+
+Depth Subject                                                     NotAfter
+----- -------                                                     --------
+    0 CN=onrender.com                                             2026-12-20
+    1 CN=WE1, O=Google Trust Services, C=US                       2029-02-20
+    2 CN=GTS Root R4, O=Google Trust Services LLC, C=US           2028-01-27
+    3 CN=GlobalSign Root CA, OU=Root CA, O=GlobalSign nv-sa, C=BE 2028-01-28
+
+== Verdict ==
+
+PolicyErrors : None
+ChainStatus  : OK
+
+Saved the leaf certificate to api.cer (public data, safe to share).
+X509 Certificate:
+Version: 3
+Serial Number: 6eb1e3fe7d0631ea1337bfa4a321c137
+Signature Algorithm:
+    Algorithm ObjectId: 1.2.840.10045.4.3.2 sha256ECDSA
+    Algorithm Parameters: NULL
+Issuer:
+    CN=WE1
+    O=Google Trust Services
+    C=US
+  Name Hash(sha1): b9bed5f1a61e40b24196b0c29e7e1a9d8bfcb520
+  Name Hash(md5): 91d5d47c7fd323ab61512ff2b8ed4d8d
+
+ NotBefore: 9/21/2026 5:04 PM
+ NotAfter: 12/20/2026 6:04 PM
+
+Subject:
+    CN=onrender.com
+  Name Hash(sha1): 30780b59c4eafd91666764a54464431582fbdb58
+  Name Hash(md5): 3bc59624a7d7daf7b029e99b3e470c06
+
+Public Key Algorithm:
+    Algorithm ObjectId: 1.2.840.10045.2.1 ECC
+    Algorithm Parameters:
+    06 08 2a 86 48 ce 3d 03  01 07
+        1.2.840.10045.3.1.7 ECDSA_P256
+Public Key Length: 256 bits
+Public Key: UnusedBits = 0
+    0000  04 fe 57 2f 35 00 d8 dc  d6 60 50 b1 35 ca 0c d9
+    0010  ae 1c 29 55 0e 45 f3 7d  12 f6 ec 50 d0 29 87 be
+    0020  28 0b 56 f2 ab d3 8d ab  16 df 7e 0a f8 21 9b 37
+    0030  d8 6c 5f 98 b1 73 87 0f  68 0f 92 27 1d 01 c2 48
+    0040  0a
+Certificate Extensions: 10
+    2.5.29.15: Flags = 1(Critical), Length = 4
+    Key Usage
+        Digital Signature (80)
+
+    2.5.29.37: Flags = 0, Length = c
+    Enhanced Key Usage
+        Server Authentication (1.3.6.1.5.5.7.3.1)
+
+    2.5.29.19: Flags = 1(Critical), Length = 2
+    Basic Constraints
+        Subject Type=End Entity
+        Path Length Constraint=None
+
+    2.5.29.14: Flags = 0, Length = 16
+    Subject Key Identifier
+        ed011f3b0df0a08dc705a871e585f3418327ddab
+
+    2.5.29.35: Flags = 0, Length = 18
+    Authority Key Identifier
+        KeyID=9077923567c4ffa8cca9e67bd980797bcc93f938
+
+    1.3.6.1.5.5.7.1.1: Flags = 0, Length = 29
+    Authority Information Access
+        [1]Authority Info Access
+             Access Method=Certification Authority Issuer (1.3.6.1.5.5.7.48.2)
+             Alternative Name:
+                  URL=http://i.pki.goog/we1.crt
+
+    2.5.29.17: Flags = 0, Length = 20
+    Subject Alternative Name
+        DNS Name=onrender.com
+        DNS Name=*.onrender.com
+
+    2.5.29.32: Flags = 0, Length = c
+    Certificate Policies
+        [1]Certificate Policy:
+             Policy Identifier=2.23.140.1.2.1
+
+    2.5.29.31: Flags = 0, Length = 2f
+    CRL Distribution Points
+        [1]CRL Distribution Point
+             Distribution Point Name:
+                  Full Name:
+                       URL=http://c.pki.goog/we1/Wr0DAOBSAJ0.crl
+
+    1.3.6.1.4.1.11129.2.4.2: Flags = 0, Length = f7
+    SCT List
+        v1
+        74db9d58f7d47e9dfd787a162a991c18cf698da7c729918c9a18b0450dba44bc
+        Monday, September 21, 2026 6:04:32 PM
+        SHA256
+        ECDSA
+        3046022100f41426a29d489fcfe11342f4b572b1c19e39c827394aed0ac7365808e4da98ea022100a7b7c79db9d6a8ed5d7bf2f0ef48b397ddc9e88b451ce88f7f97b4e532ede5cd
+        
+        v1
+        d809553b944f7affc816196f944f85abb0f8fc5e8755260f15d12e72bb454b14
+        Monday, September 21, 2026 6:04:32 PM
+        SHA256
+        ECDSA
+        3046022100ee9a8753addd6dc65b5e142b4fd4bcf3efc8b6b46f7928df5508b98af5548895022100d7141c463e7219cfc76c2fc3df064c441222b35332aa4becd96f71c502bc150f
+    CT[0]:
+      Version: 1
+      Key Id Hash(log-sha256): dNudWPfUfp39eHoWKpkcGM9pjafHKZGMmhiwRQ26RLw=
+      Key Id Hash(log-sha256-hex): 74db9d58f7d47e9dfd787a162a991c18cf698da7c729918c9a18b0450dba44bc
+      Signing Time: 9/21/2026 6:04 PM
+      Extensions: 0000
+      Hash Algorithm: 4 (SHA256)
+      Signature Algorithm: 3 (ECDSA)
+      Length: 0048
+0000: 30 46                                     ; SEQUENCE (46 Bytes)
+0002:    02 21                                  ; INTEGER (21 Bytes)
+0004:    |  00
+0005:    |  f4 14 26 a2 9d 48 9f cf  e1 13 42 f4 b5 72 b1 c1
+0015:    |  9e 39 c8 27 39 4a ed 0a  c7 36 58 08 e4 da 98 ea
+0025:    02 21                                  ; INTEGER (21 Bytes)
+0027:       00
+0028:       a7 b7 c7 9d b9 d6 a8 ed  5d 7b f2 f0 ef 48 b3 97
+0038:       dd c9 e8 8b 45 1c e8 8f  7f 97 b4 e5 32 ed e5 cd
+    Not found: dNudWPfUfp39eHoWKpkcGM9pjafHKZGMmhiwRQ26RLw=
+    CT[1]:
+      Version: 1
+      Key Id Hash(log-sha256): 2AlVO5RPev/IFhlvlE+Fq7D4/F6HVSYPFdEucrtFSxQ=
+      Key Id Hash(log-sha256-hex): d809553b944f7affc816196f944f85abb0f8fc5e8755260f15d12e72bb454b14
+      Signing Time: 9/21/2026 6:04 PM
+      Extensions: 0000
+      Hash Algorithm: 4 (SHA256)
+      Signature Algorithm: 3 (ECDSA)
+      Length: 0048
+0000: 30 46                                     ; SEQUENCE (46 Bytes)
+0002:    02 21                                  ; INTEGER (21 Bytes)
+0004:    |  00
+0005:    |  ee 9a 87 53 ad dd 6d c6  5b 5e 14 2b 4f d4 bc f3
+0015:    |  ef c8 b6 b4 6f 79 28 df  55 08 b9 8a f5 54 88 95
+0025:    02 21                                  ; INTEGER (21 Bytes)
+0027:       00
+0028:       d7 14 1c 46 3e 72 19 cf  c7 6c 2f c3 df 06 4c 44
+0038:       12 22 b3 53 32 aa 4b ec  d9 6f 71 c5 02 bc 15 0f
+    Not found: 2AlVO5RPev/IFhlvlE+Fq7D4/F6HVSYPFdEucrtFSxQ=
+
+Signature Algorithm:
+    Algorithm ObjectId: 1.2.840.10045.4.3.2 sha256ECDSA
+    Algorithm Parameters: NULL
+Signature: UnusedBits=0
+    0000  3c 14 63 86 46 6f 8f b5  08 7a 35 8b 76 aa 5c c1
+    0010  f2 ea 8f 18 cf 27 87 15  0f 5d 57 9b 3f 8a a1 0f
+    0020  20 02 62 53 63 7b 51 f4  cd 55 e5 d5 77 82 b8 6a
+    0030  19 da e3 a7 cd 49 77 9b  40 dd 47 07 48 2e 30 9d
+    0040  03 dd 00 21 02 45 30
+Non-root Certificate
+Key Id Hash(rfc-sha1): ed011f3b0df0a08dc705a871e585f3418327ddab
+Key Id Hash(sha1): dfe60487d308e5b79467639bf7c5b51a0ba35e14
+Key Id Hash(bcrypt-sha1): f06b46059fe23983fe279e34a687b587446c231c
+Key Id Hash(bcrypt-sha256): 9eb273cc4bc0162bc75b37586a0cbd047747569fb77cbb3bfe9fa921bee48119
+Key Id Hash(md5): be242b2bc88c3c0a66add99fe4efdc76
+Key Id Hash(sha256): 8a33244121212f4c0f519dcb2bc3d7c377e9e44e98dde103ea8e22189fa784c2
+Key Id Hash(pin-sha256): 8emdl/UmneUm0I4Y/vHzOTQzb9eJwG4voRHtMdNmBPk=
+Key Id Hash(pin-sha256-hex): f1e99d97f5269de526d08e18fef1f33934336fd789c06e2fa111ed31d36604f9
+Cert Hash(md5): c1b355a44e1c1577f52dfd2253c8056a
+Cert Hash(sha1): 5b1c6b87238fa11c7afbccc035d845d38288b85a
+Cert Hash(sha256): a88cf8e12b2e731a485d320c92b48ea71e0d6bf8a83868b5d110da51d4a1a45c
+Signature Hash: de42458243ed8d889c46ff7cb06931fb48b1ae39b41df72bae5a9b05a2d07b93
+CertUtil: -dump command completed successfully.
+
+====================================================================================
+
+.\tls-inspect.ps1 evidence-before-action-frontend.onrender.com
+
+== Connection ==
+
+Host     : evidence-before-action-frontend.onrender.com:443
+Protocol : Tls13
+Cipher   : TLS_AES_256_GCM_SHA384
+
+== Leaf certificate ==
+
+Subject    : CN=onrender.com
+Issuer     : CN=WE1, O=Google Trust Services, C=US
+NotBefore  : 2026-09-21 17:04
+NotAfter   : 2026-12-20 17:04
+DaysLeft   : 73
+SAN        : DNS Name=onrender.com, DNS Name=*.onrender.com
+Thumbprint : 5B1C6B87238FA11C7AFBCCC035D845D38288B85A
+
+== Chain built by this device (0 = leaf) ==
+
+Depth Subject                                                     NotAfter
+----- -------                                                     --------
+    0 CN=onrender.com                                             2026-12-20
+    1 CN=WE1, O=Google Trust Services, C=US                       2029-02-20
+    2 CN=GTS Root R4, O=Google Trust Services LLC, C=US           2028-01-27
+    3 CN=GlobalSign Root CA, OU=Root CA, O=GlobalSign nv-sa, C=BE 2028-01-28
+
+== Verdict ==
+
+PolicyErrors : None
+ChainStatus  : OK
+
+====================================================================================
+
+.\tls-inspect.ps1 evidence-before-action-frontend.onrender.com -SaveCertificate frontend.cer
+
+>> certutil -dump frontend.cer
+== Connection ==
+
+Host     : evidence-before-action-frontend.onrender.com:443
+Protocol : Tls13
+Cipher   : TLS_AES_256_GCM_SHA384
+
+== Leaf certificate ==
+
+Subject    : CN=onrender.com
+Issuer     : CN=WE1, O=Google Trust Services, C=US
+NotBefore  : 2026-09-21 17:04
+NotAfter   : 2026-12-20 17:04
+DaysLeft   : 73
+SAN        : DNS Name=onrender.com, DNS Name=*.onrender.com
+Thumbprint : 5B1C6B87238FA11C7AFBCCC035D845D38288B85A
+
+== Chain built by this device (0 = leaf) ==
+
+Depth Subject                                                     NotAfter
+----- -------                                                     --------
+    0 CN=onrender.com                                             2026-12-20
+    1 CN=WE1, O=Google Trust Services, C=US                       2029-02-20
+    2 CN=GTS Root R4, O=Google Trust Services LLC, C=US           2028-01-27
+    3 CN=GlobalSign Root CA, OU=Root CA, O=GlobalSign nv-sa, C=BE 2028-01-28
+
+== Verdict ==
+
+PolicyErrors : None
+ChainStatus  : OK
+
+Saved the leaf certificate to frontend.cer (public data, safe to share).
+X509 Certificate:
+Version: 3
+Serial Number: 6eb1e3fe7d0631ea1337bfa4a321c137
+Signature Algorithm:
+    Algorithm ObjectId: 1.2.840.10045.4.3.2 sha256ECDSA
+    Algorithm Parameters: NULL
+Issuer:
+    CN=WE1
+    O=Google Trust Services
+    C=US
+  Name Hash(sha1): b9bed5f1a61e40b24196b0c29e7e1a9d8bfcb520
+  Name Hash(md5): 91d5d47c7fd323ab61512ff2b8ed4d8d
+
+ NotBefore: 9/21/2026 5:04 PM
+ NotAfter: 12/20/2026 6:04 PM
+
+Subject:
+    CN=onrender.com
+  Name Hash(sha1): 30780b59c4eafd91666764a54464431582fbdb58
+  Name Hash(md5): 3bc59624a7d7daf7b029e99b3e470c06
+
+Public Key Algorithm:
+    Algorithm ObjectId: 1.2.840.10045.2.1 ECC
+    Algorithm Parameters:
+    06 08 2a 86 48 ce 3d 03  01 07
+        1.2.840.10045.3.1.7 ECDSA_P256
+Public Key Length: 256 bits
+Public Key: UnusedBits = 0
+    0000  04 fe 57 2f 35 00 d8 dc  d6 60 50 b1 35 ca 0c d9
+    0010  ae 1c 29 55 0e 45 f3 7d  12 f6 ec 50 d0 29 87 be
+    0020  28 0b 56 f2 ab d3 8d ab  16 df 7e 0a f8 21 9b 37
+    0030  d8 6c 5f 98 b1 73 87 0f  68 0f 92 27 1d 01 c2 48
+    0040  0a
+Certificate Extensions: 10
+    2.5.29.15: Flags = 1(Critical), Length = 4
+    Key Usage
+        Digital Signature (80)
+
+    2.5.29.37: Flags = 0, Length = c
+    Enhanced Key Usage
+        Server Authentication (1.3.6.1.5.5.7.3.1)
+
+    2.5.29.19: Flags = 1(Critical), Length = 2
+    Basic Constraints
+        Subject Type=End Entity
+        Path Length Constraint=None
+
+    2.5.29.14: Flags = 0, Length = 16
+    Subject Key Identifier
+        ed011f3b0df0a08dc705a871e585f3418327ddab
+
+    2.5.29.35: Flags = 0, Length = 18
+    Authority Key Identifier
+        KeyID=9077923567c4ffa8cca9e67bd980797bcc93f938
+
+    1.3.6.1.5.5.7.1.1: Flags = 0, Length = 29
+    Authority Information Access
+        [1]Authority Info Access
+             Access Method=Certification Authority Issuer (1.3.6.1.5.5.7.48.2)
+             Alternative Name:
+                  URL=http://i.pki.goog/we1.crt
+
+    2.5.29.17: Flags = 0, Length = 20
+    Subject Alternative Name
+        DNS Name=onrender.com
+        DNS Name=*.onrender.com
+
+    2.5.29.32: Flags = 0, Length = c
+    Certificate Policies
+        [1]Certificate Policy:
+             Policy Identifier=2.23.140.1.2.1
+
+    2.5.29.31: Flags = 0, Length = 2f
+    CRL Distribution Points
+        [1]CRL Distribution Point
+             Distribution Point Name:
+                  Full Name:
+                       URL=http://c.pki.goog/we1/Wr0DAOBSAJ0.crl
+
+    1.3.6.1.4.1.11129.2.4.2: Flags = 0, Length = f7
+    SCT List
+        v1
+        74db9d58f7d47e9dfd787a162a991c18cf698da7c729918c9a18b0450dba44bc
+        Monday, September 21, 2026 6:04:32 PM
+        SHA256
+        ECDSA
+        3046022100f41426a29d489fcfe11342f4b572b1c19e39c827394aed0ac7365808e4da98ea022100a7b7c79db9d6a8ed5d7bf2f0ef48b397ddc9e88b451ce88f7f97b4e532ede5cd
+        
+        v1
+        d809553b944f7affc816196f944f85abb0f8fc5e8755260f15d12e72bb454b14
+        Monday, September 21, 2026 6:04:32 PM
+        SHA256
+        ECDSA
+        3046022100ee9a8753addd6dc65b5e142b4fd4bcf3efc8b6b46f7928df5508b98af5548895022100d7141c463e7219cfc76c2fc3df064c441222b35332aa4becd96f71c502bc150f
+    CT[0]:
+      Version: 1
+      Key Id Hash(log-sha256): dNudWPfUfp39eHoWKpkcGM9pjafHKZGMmhiwRQ26RLw=
+      Key Id Hash(log-sha256-hex): 74db9d58f7d47e9dfd787a162a991c18cf698da7c729918c9a18b0450dba44bc
+      Signing Time: 9/21/2026 6:04 PM
+      Extensions: 0000
+      Hash Algorithm: 4 (SHA256)
+      Signature Algorithm: 3 (ECDSA)
+      Length: 0048
+0000: 30 46                                     ; SEQUENCE (46 Bytes)
+0002:    02 21                                  ; INTEGER (21 Bytes)
+0004:    |  00
+0005:    |  f4 14 26 a2 9d 48 9f cf  e1 13 42 f4 b5 72 b1 c1
+0015:    |  9e 39 c8 27 39 4a ed 0a  c7 36 58 08 e4 da 98 ea
+0025:    02 21                                  ; INTEGER (21 Bytes)
+0027:       00
+0028:       a7 b7 c7 9d b9 d6 a8 ed  5d 7b f2 f0 ef 48 b3 97
+0038:       dd c9 e8 8b 45 1c e8 8f  7f 97 b4 e5 32 ed e5 cd
+    Not found: dNudWPfUfp39eHoWKpkcGM9pjafHKZGMmhiwRQ26RLw=
+    CT[1]:
+      Version: 1
+      Key Id Hash(log-sha256): 2AlVO5RPev/IFhlvlE+Fq7D4/F6HVSYPFdEucrtFSxQ=
+      Key Id Hash(log-sha256-hex): d809553b944f7affc816196f944f85abb0f8fc5e8755260f15d12e72bb454b14
+      Signing Time: 9/21/2026 6:04 PM
+      Extensions: 0000
+      Hash Algorithm: 4 (SHA256)
+      Signature Algorithm: 3 (ECDSA)
+      Length: 0048
+0000: 30 46                                     ; SEQUENCE (46 Bytes)
+0002:    02 21                                  ; INTEGER (21 Bytes)
+0004:    |  00
+0005:    |  ee 9a 87 53 ad dd 6d c6  5b 5e 14 2b 4f d4 bc f3
+0015:    |  ef c8 b6 b4 6f 79 28 df  55 08 b9 8a f5 54 88 95
+0025:    02 21                                  ; INTEGER (21 Bytes)
+0027:       00
+0028:       d7 14 1c 46 3e 72 19 cf  c7 6c 2f c3 df 06 4c 44
+0038:       12 22 b3 53 32 aa 4b ec  d9 6f 71 c5 02 bc 15 0f
+    Not found: 2AlVO5RPev/IFhlvlE+Fq7D4/F6HVSYPFdEucrtFSxQ=
+
+Signature Algorithm:
+    Algorithm ObjectId: 1.2.840.10045.4.3.2 sha256ECDSA
+    Algorithm Parameters: NULL
+Signature: UnusedBits=0
+    0000  3c 14 63 86 46 6f 8f b5  08 7a 35 8b 76 aa 5c c1
+    0010  f2 ea 8f 18 cf 27 87 15  0f 5d 57 9b 3f 8a a1 0f
+    0020  20 02 62 53 63 7b 51 f4  cd 55 e5 d5 77 82 b8 6a
+    0030  19 da e3 a7 cd 49 77 9b  40 dd 47 07 48 2e 30 9d
+    0040  03 dd 00 21 02 45 30
+Non-root Certificate
+Key Id Hash(rfc-sha1): ed011f3b0df0a08dc705a871e585f3418327ddab
+Key Id Hash(sha1): dfe60487d308e5b79467639bf7c5b51a0ba35e14
+Key Id Hash(bcrypt-sha1): f06b46059fe23983fe279e34a687b587446c231c
+Key Id Hash(bcrypt-sha256): 9eb273cc4bc0162bc75b37586a0cbd047747569fb77cbb3bfe9fa921bee48119
+Key Id Hash(md5): be242b2bc88c3c0a66add99fe4efdc76
+Key Id Hash(sha256): 8a33244121212f4c0f519dcb2bc3d7c377e9e44e98dde103ea8e22189fa784c2
+Key Id Hash(pin-sha256): 8emdl/UmneUm0I4Y/vHzOTQzb9eJwG4voRHtMdNmBPk=
+Key Id Hash(pin-sha256-hex): f1e99d97f5269de526d08e18fef1f33934336fd789c06e2fa111ed31d36604f9
+Cert Hash(md5): c1b355a44e1c1577f52dfd2253c8056a
+Cert Hash(sha1): 5b1c6b87238fa11c7afbccc035d845d38288b85a
+Cert Hash(sha256): a88cf8e12b2e731a485d320c92b48ea71e0d6bf8a83868b5d110da51d4a1a45c
+Signature Hash: de42458243ed8d889c46ff7cb06931fb48b1ae39b41df72bae5a9b05a2d07b93
+CertUtil: -dump command completed successfully.
+
+====================================================================================
+
+curl.exe -sS -o NUL -w "version=%{http_version} code=%{http_code}`n" https://evidence-before-action-api.onrender.com/api/healthz
+ 
+version=1.1 code=200
+
+====================================================================================
+
+curl.exe -sS -o NUL -w "version=%{http_version} code=%{http_code}`n" https://evidence-before-action-frontend.onrender.com/
+
+version=1.1 code=200
+
+====================================================================================
+
+curl.exe -sSI https://evidence-before-action-frontend.onrender.com/ |
+>>   findstr /i "alt-svc"
+
+alt-svc: h3=":443"; ma=86400
+
+====================================================================================
+
+curl.exe -sS -H "accept: application/dns-json" `
+>>   "https://cloudflare-dns.com/dns-query?name=onrender.com&type=CAA"
+
+{"Status":0,"TC":false,"RD":true,"RA":true,"AD":false,"CD":false,"Question":[{"name":"onrender.com","type":257}],"Answer":[{"name":"onrender.com","type":257,"TTL":60,"data":"0 iodef \"mailto:security+caafailure@render.com\""},{"name":"onrender.com","type":257,"TTL":60,"data":"0 issue \"digicert.com\""},{"name":"onrender.com","type":257,"TTL":60,"data":"0 issue \"letsencrypt.org\""},{"name":"onrender.com","type":257,"TTL":60,"data":"0 issue \"pki.goog; cansignhttpexchanges=yes\""},{"name":"onrender.com","type":257,"TTL":60,"data":"0 issuewild \"digicert.com\""},{"name":"onrender.com","type":257,"TTL":60,"data":"0 issuewild \"letsencrypt.org\""},{"name":"onrender.com","type":257,"TTL":60,"data":"0 issuewild \"pki.goog; cansignhttpexchanges=yes\""}]}
+
+====================================================================================
+
+For both hostnames, the leaf's issuer is `CN=WE1, O=Google Trust Services, C=US`.
+
+The Windows-built chain starts at 0 with `0 CN=onrender.com`, then to 1 with `CN=WE1, O=Google Trust Services, 
+C=US`, then to 2 with `CN=GTS Root R4, O=Google Trust Services LLC, C=US`, then to 3 with `CN=GlobalSign Root CA, 
+OU=Root CA, O=GlobalSign nv-sa, C=BE`. GlobalSign Root CA is the root in the Windows-built chain. The script alone 
+cannot prove which intermediates the server sent, because Windows may fetch or use cached certificates while building 
+the chain.
+
+The SANs for both hostnames are `DNS Name=onrender.com, DNS Name=*.onrender.com`. The wildcard can cover matching
+Render subdomains, and Render controls the shared platform key. This is acceptable for this course, but a bank
+would want stronger tenant-specific key isolation. 
+
+`NotAfter` is `2026-12-20 17:04` for both hostnames with 73 days remaining. Render says it automatically creates and 
+renews TLS certificates in its custom domains documentation (https://render.com/docs/custom-domains).
+
+For both hostnames, the verdict states `PolicyErrors` as `None` and `ChainStatus` as `OK`. One failure it would have caught 
+is if the certificate was expired. 
+
+The browsers Protocol column showed HTTP version 3 for both the frontend and the API. Curl negotiated HTTP version 1.1 for both the frontend 
+and the API. The frontend response advertised HTTP version 3. `alt-svc` advertises `h3`. Both the browser and curl can support and negotiate 
+different HTTP versions. 
+
+The CAA records `issuewild "pki.goog; cansignhttpexchange=yes"` and `issue "pki.goog; cansignhttpexchange=yes"` permit Google Trust Services 
+to issue non-wildcard and wildcard certificates. The certificate includes both `onrender.com` and `*.onrender.com`. The `issue` tag applies to 
+`onrender.com` and the `issuewild` tag is applied to `*onrender.com`.

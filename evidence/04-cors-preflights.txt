@@ -1,0 +1,54 @@
+curl.exe -i -X OPTIONS http://localhost:3002/api/tickets/T-00001 `
+>>   -H "Origin: http://localhost:5173" `
+>>   -H "Access-Control-Request-Method: PATCH" `
+>>   -H "Access-Control-Request-Headers: content-type,x-request-id"
+
+HTTP/1.1 204 No Content
+Vary: Origin
+Access-Control-Allow-Origin: http://localhost:5173
+Access-Control-Expose-Headers: Location, X-Request-Id
+Access-Control-Allow-Methods: GET, POST, PATCH, DELETE
+Access-Control-Allow-Headers: Content-Type, X-Request-Id
+Access-Control-Max-Age: 600
+Date: Thu, 08 Oct 2026 00:11:46 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+===========================================================================================
+
+curl.exe -i -X OPTIONS http://localhost:3002/api/tickets/T-00001 `
+>>   -H "Origin: http://localhost:5174" `
+>>   -H "Access-Control-Request-Method: PATCH" `
+>>   -H "Access-Control-Request-Headers: content-type,x-request-id"
+
+HTTP/1.1 204 No Content
+Vary: Origin
+Date: Thu, 08 Oct 2026 00:11:53 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+===========================================================================================
+
+curl.exe -i http://localhost:3002/api/tickets/T-00001 `
+>>   -H "Origin: http://localhost:5174"
+
+HTTP/1.1 200 OK
+Vary: Origin
+X-Request-Id: fb87c0fd-4c02-486e-80c8-5a587633b69a
+Content-Type: application/json; charset=utf-8
+Content-Length: 171
+ETag: W/"ab-s9kjET+F/b4eK77Y9NnBR3mQrd8"
+Date: Thu, 08 Oct 2026 00:14:09 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"ticket_id":"T-00001","zone":"North","category":"Access","priority":"High","opened_on":"2026-03-01","closed_on":null,"estimated_hours":4,"summary":"Entrance door sticks"}
+
+The GET succeeds because CORS is a browser rule, not an API authorization check. A browser prevents 
+JavaScript from reading the response because the server did not return `Access-Control-Allow-Origin` 
+for this origin.
+
+===========================================================================================
+
+As for the break and fix in the browser, the reason why the request failed was because of the missing
+`Access-Control-Allow-Origin` header.

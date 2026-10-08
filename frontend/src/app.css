@@ -73,6 +73,34 @@ body {
   margin: 2rem auto;
 }
 
+.app-mode-switch {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.app-mode-switch button {
+  min-height: 2.5rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid #718198;
+  border-radius: 999px;
+  background: transparent;
+  color: #253247;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.app-mode-switch button[aria-pressed="true"] {
+  border-color: #173b6c;
+  background: #173b6c;
+  color: #fff;
+}
+
+.app-mode-switch button:hover {
+  border-color: #173b6c;
+}
+
 body > #root + footer {
   width: min(100% - 2.5rem, 72rem);
   margin: 3rem auto 2rem;

@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { CsvUploader } from './components/CsvUploader'
 import { RecordsExplorer } from './components/RecordsExplorer'
 import { useState } from 'react'
+import { ApiRecordsExplorer } from './components/ApiRecordsExplorer'
 import type { ParsedCsv } from './lib/parseCsv'
 import {
   downloadAnalysis,
@@ -11,6 +12,7 @@ import {
 import './app.css'
 
 export function App() {
+  const [mode, setMode] = useState<'api' | 'csv'>('api')
   const [dataset, setDataset] = useState<
     (ParsedCsv & {
       fileName: string
@@ -40,19 +42,33 @@ export function App() {
         </button>
       </header>
       <main className="app-main">
-        <CsvUploader
-          onDatasetLoaded={(loadedDataset) =>
-            setDataset((currentDataset) => ({
-              ...loadedDataset,
-              loadId: (currentDataset?.loadId ?? 0) + 1,
-            }))
-          }
-        />
-        <RecordsExplorer
-          key={dataset?.loadId ?? 0}
-          dataset={dataset}
-          onAnalysisChange={setAnalysis}
-        />
+        <nav className="app-mode-switch" aria-label="Data source">
+          <button type="button" aria-pressed={mode === 'api'} onClick={() => setMode('api')}>
+            API mode
+          </button>
+          <button type="button" aria-pressed={mode === 'csv'} onClick={() => setMode('csv')}>
+            Local CSV mode
+          </button>
+        </nav>
+        {mode === 'api' ? (
+          <ApiRecordsExplorer />
+        ) : (
+          <>
+            <CsvUploader
+              onDatasetLoaded={(loadedDataset) =>
+                setDataset((currentDataset) => ({
+                  ...loadedDataset,
+                  loadId: (currentDataset?.loadId ?? 0) + 1,
+                }))
+              }
+            />
+            <RecordsExplorer
+              key={dataset?.loadId ?? 0}
+              dataset={dataset}
+              onAnalysisChange={setAnalysis}
+            />
+          </>
+        )}
       </main>
     </>
   )

@@ -1,0 +1,117 @@
+.api-explorer {
+  margin-top: 1rem;
+}
+
+.api-explorer__intro,
+.api-explorer__status {
+  margin: 0.45rem 0 0;
+  color: #536174;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.api-explorer__error,
+.api-explorer__success {
+  margin: 1rem 0;
+  padding: 0.85rem 1rem;
+  border-radius: 0.7rem;
+  line-height: 1.5;
+}
+
+.api-explorer__error {
+  background: #fff0ef;
+  color: #842b24;
+}
+
+.api-explorer__success {
+  background: #eaf7ed;
+  color: #245b32;
+}
+
+.api-explorer__create {
+  margin-top: 1.25rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 0.125rem 0.75rem rgb(20 40 70 / 8%);
+}
+
+.api-explorer__create h2 {
+  margin: 0;
+  color: #253247;
+  font-size: 1.1rem;
+}
+
+.api-explorer__form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.api-explorer__form input,
+.api-explorer__form select {
+  width: 100%;
+  min-height: 2.65rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #718198;
+  border-radius: 0.65rem;
+  background: #fff;
+  color: #253247;
+  font: inherit;
+  font-weight: 400;
+}
+
+.api-explorer__field-error {
+  color: #842b24;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.api-explorer__summary-field {
+  grid-column: span 2;
+}
+
+.api-explorer__submit,
+.api-explorer__close-button {
+  min-height: 2.5rem;
+  padding: 0.45rem 0.9rem;
+  border: 0;
+  border-radius: 999px;
+  background: #173b6c;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.api-explorer__close-button {
+  white-space: nowrap;
+}
+
+.api-explorer__submit:hover:not(:disabled),
+.api-explorer__close-button:hover:not(:disabled) {
+  background: #102e56;
+}
+
+.api-explorer__submit:disabled,
+.api-explorer__close-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+@media (max-width: 48rem) {
+  .api-explorer__form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 34rem) {
+  .api-explorer__form {
+    grid-template-columns: 1fr;
+  }
+
+  .api-explorer__summary-field {
+    grid-column: auto;
+  }
+}

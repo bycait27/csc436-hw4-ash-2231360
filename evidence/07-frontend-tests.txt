@@ -1,0 +1,19 @@
+npm run test
+
+> test
+> npm run test --workspaces --if-present
+
+
+> test
+> vitest run
+
+
+ RUN  v4.1.11 C[redacted]/frontend
+
+ ✓ test/acceptance.test.ts (3 tests) 13ms
+ ✓ test/apiClient.test.ts (2 tests) 3ms
+
+ Test Files  2 passed (2)
+      Tests  5 passed (5)
+   Start at  21:17:49
+   Duration  277ms (transform 75ms, setup 0ms, import 201ms, tests 16ms, environment 0ms)
